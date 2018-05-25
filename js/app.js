@@ -44,11 +44,12 @@ class Enemy {
         }
     }
 
-    // Draw the enemy on the screen, required method for game
+    // Draw the enemy on the screen
     render() {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
 
+    //reset enemy properties
     reset(){
         this.speed = Math.floor(Math.random() * (150 - 50)) + 50;
         let tempY = Math.floor(Math.random() * (3));
@@ -69,10 +70,12 @@ class Player {
         this.canMove = true;
     }
 
+    //draw the player on the screen
     render() {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
 
+    //handle movement by putting checks for game canvas limits
     handleInput(key) {
         console.log(key);
         if(this.canMove){
@@ -137,11 +140,14 @@ class Player {
         }
     }
 
+    //reset player position
     reset() {
         this.x = 200;
         this.y = yBottomLimit;
     }
 
+    //handle collison, reset player position with slight delay
+    //so that collision is noticeable
     handleCollision() {
         this.canMove = false;
         this.updateLives();
@@ -154,12 +160,14 @@ class Player {
 
     }
 
+    //lives = 0, display modal
     gameLost() {
         this.canMove = false;
         modalHeader.firstElementChild.textContent = "Game Over"
         modal.classList.add('show');
     }
 
+    //goal achieved, display modal
     gameWon() {
         this.wins++;
         winsDiv.textContent = this.wins;
@@ -190,6 +198,7 @@ document.addEventListener('keyup', function(e) {
     player.handleInput(allowedKeys[e.keyCode]);
 });
 
+//modal Continue button, reset the game
 modalContinue.onclick = function(){
     player.reset();
     player.updateLives(true);
