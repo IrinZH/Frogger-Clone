@@ -1,7 +1,7 @@
 # Frogger-Arcade Game Clone
-Project demo can be found [here](https://ssaleem.github.io/Frogger-Clone/)
+Project demo can be found [here](https://ssaleem.github.io/Frogger-Clone/). The project is based on starter code from [this repository](https://github.com/udacity/frontend-nanodegree-arcade-game).
 ## How to Run
-Opening `index.html` loads the game
+Opening `index.html` loads the game.
 
 ## How to Play
 The goal is to reach the water without colliding with any bugs. Use `up`, `down`, `left` and `right` arrow keys to move. 
