@@ -19,10 +19,14 @@ h1 {
 }
 
 .panel {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	width: 505px;
 	margin: 5px auto;
-	align-items: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	background-color: #e4dede;
 	border-radius: 10px;
 	padding: 0;
