@@ -43,14 +43,19 @@ h1 {
         flex-wrap: wrap;
 	background-color: #e4dede;
 	border-radius: 10px;
-	padding: 8px;
+	padding: 0;
 }
 
 
 .panel-item {
 	width: 50%;
-	padding: 0;
+	padding: 8px;
 	margin: 0;
+}
+.panel-text {
+	width: 100%;
+	margin: 0;
+	padding: 8px;
 }
 
 .game-key span {
@@ -61,9 +66,42 @@ h1 {
 	background-color: #793c43;
 }
 
+.current-sprite {
+	margin: 0 auto;
+	border: 1px dashed #793c43;
+	border-radius: 50%;
+}
+
+.sprites {
+	width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	padding: 8px;
+}
+
+.sprite {
+	margin: 0;
+	width: 20%;
+	height: auto;
+}
+
+.sprite:hover {
+	cursor: pointer;
+	border: 1px dashed #793c43;
+	border-radius: 50%;
+}
+
+.clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+}
+
 .game-canvas {
 	width: 70%;
 }
+
 .win-modal {
 	display: none;
 	position: fixed;

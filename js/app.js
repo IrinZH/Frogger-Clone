@@ -12,6 +12,17 @@ const modal = document.querySelector('.win-modal');
 const modalHeader = document.querySelector('.modal-header');
 const modalContinue = document.querySelector('.modal-continue');
 
+const spriteChooser = document.querySelector('.sprites');
+const currentSpriteElement = document.querySelector('.current-sprite');
+let currentSpriteSrc = 'images/char-cat-girl.png';
+
+spriteChooser.addEventListener('click', function(event){
+  //src property gives absolute path so use attribute src for relative path
+  currentSpriteSrc = event.target.getAttribute('src');
+  currentSpriteElement.setAttribute('src', currentSpriteSrc);
+  player.updateSprite();
+});
+
 // Enemies our player must avoid
 class Enemy {
   constructor(number) {
@@ -66,7 +77,8 @@ class Enemy {
 // Player class
 class Player {
   constructor() {
-    this.sprite = 'images/char-cat-girl.png';
+    // this.sprite = 'images/char-cat-girl.png';
+    this.sprite = currentSpriteSrc;
     this.x = 200;
     this.y = yBottomLimit;
     this.wins = 0;
@@ -74,6 +86,9 @@ class Player {
     this.canMove = true;
   }
 
+  updateSprite(){
+    this.sprite = currentSpriteSrc;
+  }
   //draw the player on the screen
   render() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
