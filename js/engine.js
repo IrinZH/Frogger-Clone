@@ -25,7 +25,7 @@ var Engine = (function(global) {
     lastTime;
 
   canvas.width = 606;
-  canvas.height = 606;
+  canvas.height = 588;
   var container = doc.querySelector('.game-canvas');
   container.appendChild(canvas);
   // doc.body.appendChild(canvas);
