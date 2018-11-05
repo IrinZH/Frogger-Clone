@@ -1,5 +1,6 @@
+const canvasWidth = 606;
 const xLeftLimit = -50;
-const xRightLimit = 405;
+const xRightLimit = canvasWidth - 100;
 const xMove = 100;
 const yBottomLimit = 390;
 const yTopLimit = -50;
@@ -54,8 +55,8 @@ class Enemy {
         }
       }
     }
-    //check if enemy left screen
-    if (this.x > 505) {
+    //check if enemy left screen/canvas
+    if (this.x > canvasWidth) {
       this.reset();
     }
   }

@@ -24,7 +24,7 @@ var Engine = (function(global) {
     ctx = canvas.getContext('2d'),
     lastTime;
 
-  canvas.width = 505;
+  canvas.width = 606;
   canvas.height = 606;
   var container = doc.querySelector('.game-canvas');
   container.appendChild(canvas);
@@ -117,7 +117,7 @@ var Engine = (function(global) {
         'images/grass-block.png' // Row 2 of 2 of grass
       ],
       numRows = 6,
-      numCols = 5,
+      numCols = 6,
       row,
       col;
 
