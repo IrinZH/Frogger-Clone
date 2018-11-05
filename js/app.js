@@ -7,6 +7,9 @@ const yTopLimit = -50;
 const yMove = 80;
 const spriteWidth = 80;
 const enemyLocationsY = [70, 150, 230];
+
+const yWIN = -10;
+
 const livesDiv = document.querySelector('.lives');
 const winsDiv = document.querySelector('.wins');
 const modal = document.querySelector('.win-modal');
@@ -30,15 +33,12 @@ class Enemy {
     this.sprite = 'images/enemy-bug.png';
     this.number = number;
     this.reset();
-    console.log(
-      `Enemey created with x: ${this.x} y: ${this.y} speed: ${this.speed}`
-    );
   }
 
-  // Update the enemy's position, required method for game
+  // Update the enemy's position
   // Parameter: dt, a time delta between ticks
   update(dt) {
-    // You should multiply any movement by the dt parameter
+    // Multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
     this.x += this.speed * dt;
@@ -49,16 +49,12 @@ class Enemy {
         (player.x + spriteWidth >= this.x &&
           this.x + spriteWidth > player.x + spriteWidth)
       ) {
-        console.log(`collision bug--x: ${this.x} y: ${this.y}`);
-        if (player.canMove) {
-          player.handleCollision();
-        }
+        // console.log(`collision bug--x: ${this.x} y: ${this.y}`);
+        player.canMove && (player.handleCollision());
       }
     }
-    //check if enemy left screen/canvas
-    if (this.x > canvasWidth) {
-      this.reset();
-    }
+    //check if enemy left screen/canvas then reset enemy
+    (this.x > canvasWidth) && (this.reset());
   }
 
   // Draw the enemy on the screen
@@ -68,9 +64,9 @@ class Enemy {
 
   //reset enemy properties
   reset() {
-    this.speed = Math.floor(Math.random() * (150 - 50)) + 50;
+    this.speed = Math.floor(Math.random() * (200 - 90)) + 90;
     let tempY = Math.floor(Math.random() * 3);
-    this.x = -150 * this.number;
+    this.x = -150 * (this.number);
     this.y = enemyLocationsY[tempY];
   }
 }
@@ -78,7 +74,6 @@ class Enemy {
 // Player class
 class Player {
   constructor() {
-    // this.sprite = 'images/char-cat-girl.png';
     this.sprite = currentSpriteSrc;
     this.x = 200;
     this.y = yBottomLimit;
@@ -97,46 +92,29 @@ class Player {
 
   //handle movement by putting checks for game canvas limits
   handleInput(key) {
-    console.log(key);
     if (this.canMove) {
       switch (key) {
         case 'left':
-          if (this.x - xMove > xLeftLimit) {
-            this.x -= xMove;
-            console.log(`player--x: ${this.x} y: ${this.y}`);
-          }
+          (this.x - xMove > xLeftLimit) && (this.x -= xMove);
           break;
         case 'right':
-          if (this.x + xMove < xRightLimit) {
-            this.x += xMove;
-            console.log(`player--x: ${this.x} y: ${this.y}`);
-          }
+          (this.x + xMove < xRightLimit) && (this.x += xMove);
           break;
         case 'up':
           if (this.y - yMove > yTopLimit) {
             this.y -= yMove;
-            if (this.checkWin()) {
-              this.gameWon();
-            }
-            console.log(`player--x: ${this.x} y: ${this.y}`);
+            (this.checkWin()) && (this.gameWon());
           }
           break;
         case 'down':
-          if (this.y + yMove <= yBottomLimit) {
-            this.y += yMove;
-            console.log(`player--x: ${this.x} y: ${this.y}`);
-          }
+          (this.y + yMove <= yBottomLimit) && (this.y += yMove);
           break;
       }
     }
   }
 
   checkWin() {
-    if (this.y === -10) {
-      return true;
-    } else {
-      return false;
-    }
+    return (this.y === yWIN);
   }
 
   updateLives(init = false) {
@@ -145,15 +123,12 @@ class Player {
       this.lives = 3;
       livesDiv.textContent = this.lives;
       this.canMove = true;
-    } else {
-      console.log(`lives: ${this.lives} `);
+    }
+    else {
       this.lives--;
       livesDiv.textContent = this.lives;
       //check if game lost
-      if (this.lives === 0) {
-        console.log(`game lost`);
-        this.gameLost();
-      }
+      (this.lives === 0) && (this.gameLost());
     }
   }
 
@@ -196,7 +171,7 @@ class Player {
 //create player and enemies
 const player = new Player();
 const allEnemies = [];
-for (let i = 0; i < 4; i++) {
+for (let i = 1; i < 7; i++) {
   allEnemies.push(new Enemy(i));
 }
 

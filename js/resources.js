@@ -45,7 +45,7 @@
       /* This URL has not been previously loaded and is not present
              * within our cache; we'll need to load this image.
              */
-      let img = new Image();
+      let img = new Image(); //functionally equivalent to document.createElement('img').
       img.onload = function() {
         /* Once our image has properly loaded, add it to our cache
                  * so that we can simply return this image if the developer
