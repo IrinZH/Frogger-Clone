@@ -1,3 +1,7 @@
+* {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
 body {
 	text-align: center;
 	color: #793c43;
@@ -18,19 +22,28 @@ h1 {
 	padding: 5px;
 }
 
-.panel {
+.main {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	width: 505px;
-	margin: 5px auto;
-	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+    padding: 8px;
+}
+
+.panel {
+	width: 30%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	/*-webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;*/
 	background-color: #e4dede;
 	border-radius: 10px;
-	padding: 0;
+	padding: 8px;
 }
+
 
 .panel-item {
 	float: left;
@@ -39,6 +52,9 @@ h1 {
 	margin: 0;
 }
 
+.game-canvas {
+	width: 70%;
+}
 .win-modal {
 	display: none;
 	position: fixed;
