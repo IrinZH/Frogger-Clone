@@ -8,20 +8,18 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<header>
-		<h1>Frogger Clone</h1>
-	</header>
 	<div class="main">
 		<section class="panel">
-			<p class="panel-item">Lives: <span class="lives">3</span></p>
-			<p class="panel-item">Wins: <span class="wins">0</span></p>
-			<p class="panel-text">GOAL</p>
-			<p class="panel-text">Reach the sea without getting hit</p>
+			<h1>Frogger Clone</h1>
+
+			<p class="panel-text">GOAL<br/><span>Reach the sea without getting hit</span></p>
+
 			<p class="panel-text">GAME CONTROLS</p>
-			<p class="panel-item">UP  <span>&#x25B2;</span></p>
-			<p class="panel-item">DOWN  <span>&#x25BC;</span></p>
-			<p class="panel-item">LEFT  <span>&#x25C0;</span></p>
-			<p class="panel-item">RIGHT  <span>&#x25BA;</span></p>
+			<p class="game-key">UP  <span>&#x25B2;</span></p>
+			<p class="game-key">DOWN  <span>&#x25BC;</span></p>
+			<p class="game-key">LEFT  <span>&#x25C0;</span></p>
+			<p class="game-key">RIGHT  <span>&#x25BA;</span></p>
+
 			<p class="panel-text">CHOOSE CHARACTER</p>
 			<img class="current-sprite" src="images/char-cat-girl.png" alt="current sprite">
 			<div class="sprites">
@@ -32,7 +30,13 @@
 				<img class="sprite" src="images/char-princess-girl.png" alt="char-princess-girl">
 			</div>
 		</section>
-		<div class="game-canvas">
+		<div class="game-area">
+			<div class="score-panel">
+				<p class="panel-item">Lives: <span class="lives">3</span></p>
+				<p class="panel-item">Wins: <span class="wins">0</span></p>
+			</div>
+			<div class="game-canvas">
+			</div>
 		</div>
 	</div>
 
