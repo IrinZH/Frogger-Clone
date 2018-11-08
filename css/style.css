@@ -34,9 +34,9 @@ h1 {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	/*-webkit-box-align: center;
+	-webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center;*/
+    align-items: center;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
 	background-color: #e4dede;
@@ -80,7 +80,7 @@ h1 {
 .sprite {
 	margin: 0;
 	width: 20%;
-	max-height: 110px;
+	max-height: 116px;
 	padding: 0;
 }
 
@@ -88,12 +88,6 @@ h1 {
 	cursor: pointer;
 	border: 1px dashed #793c43;
 	border-radius: 50%;
-}
-
-.clearfix::after {
-      content: "";
-      clear: both;
-      display: table;
 }
 
 .game-area {
