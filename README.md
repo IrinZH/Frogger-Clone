@@ -12,7 +12,7 @@ The project is based on starter code as well assets from [this repository](https
 
 **Character**: The player can also choose a character from five different sprites.
 
-<img src="frogger.gif" alt="alt text" width="600px" height="400px">
+<img src="frogger.gif" alt="frogger app gif">
 
 ## Live Version
 Start playing [here](https://ssaleem.github.io/Frogger-Clone/).
