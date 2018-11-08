@@ -186,3 +186,18 @@ footer {
 	padding: 1.5em;
 	font-family: 'Audiowide', cursive;
 }
+
+@media only screen and (min-width: 1400px) {
+	.main {
+		padding: 100px;
+	}
+
+	.current-sprite {
+		max-height: calc(140px + 8vw);
+	}
+
+	.sprite {
+		max-height: calc(120px + 8vw);
+	}
+
+}
