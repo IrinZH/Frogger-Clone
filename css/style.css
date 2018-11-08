@@ -118,6 +118,11 @@ h1 {
 	padding: 0;
 }
 
+.game-canvas{
+	width: 100%;
+}
+
+
 .panel-item {
 	width: 50%;
 	padding: 4px;
