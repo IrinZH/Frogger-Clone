@@ -1,3 +1,4 @@
+![Lighthouse Performance Badge](lighthouse_performance.svg)
 # Frogger-Arcade Game Clone
 This is a variation of the classic Frogger arcade game. In this project HTML `<canvas>` is used to render game screen and characters. To abstract out the functionaliy of player and enemies in the game, ES6 classes are used. 
 
